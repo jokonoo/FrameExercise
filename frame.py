@@ -23,12 +23,13 @@ class Frame:
                 self.centre = centre
             else:
                 raise NotEvenOrOddNumberOfCharacters('Must be only even or odd number of characters in words to center')
+        self.centre = centre
 
     def build_frame(self):
         n_of_spaces = ceil(abs(self.number_of_spaces))  # making sure that number is both positive and not int
         longest_word = len(max(self.text, key=len))  # finding length of the longest word
         floor = (longest_word + 2 + (
-                    2 * n_of_spaces)) * self.char  # building floor based on len of longest word and character each side
+                2 * n_of_spaces)) * self.char  # building floor based on len of longest word and character each side
         if self.centre:
             wall = [
                 f'{self.char}{word.center(len(floor) - 2 * len(self.char))}{self.char}'
@@ -40,5 +41,3 @@ class Frame:
         wall = '\n'.join(wall)  # joining all words with newline character
         return f'{floor}\n{wall}\n{floor}'  # finally returning whole frame together
 
-
-print(Frame(['AAAA', 'A', 'AAAAAAAAA'], '?', centre=True).build_frame())
