@@ -26,7 +26,7 @@ class Frame:
         self.centre = centre
 
     def build_frame(self):
-        n_of_spaces = ceil(abs(self.number_of_spaces))  # making sure that number is both positive and not int
+        n_of_spaces = ceil(abs(self.number_of_spaces))  # making sure that number is both positive and not float
         longest_word = len(max(self.text, key=len))  # finding length of the longest word
         floor = (longest_word + 2 + (
                 2 * n_of_spaces)) * self.char  # building floor based on len of longest word and character each side
