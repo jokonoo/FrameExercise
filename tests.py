@@ -40,8 +40,13 @@ class TestFrame(unittest.TestCase):
                          '...........\n.  Test   .\n.  Small  .\n.  Words  '
                          '.\n...........')
 
-    # def test_centre(self):
-    #    self.assertEqual()
+    def test_centre(self):
+        self.assertEqual(Frame(['Test', 'Case'], '#', centre=True).build_frame(),
+                         '########\n# Test #\n# Case #\n########')
+        self.assertEqual(Frame(['Test1', 'Case1'], '#', centre=True).build_frame(),
+                         '#########\n# Test1 #\n# Case1 #\n#########')
+        self.assertEqual(Frame(['TestLongCase', 'Checking'], '#', centre=True).build_frame(),
+                         '################\n# TestLongCase #\n#   Checking   #\n################')
 
 
 if __name__ == '__main__':

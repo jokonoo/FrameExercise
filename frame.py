@@ -40,4 +40,3 @@ class Frame:
                 for word in self.text]  # building walls based on length of longest word and number of spaces
         wall = '\n'.join(wall)  # joining all words with newline character
         return f'{floor}\n{wall}\n{floor}'  # finally returning whole frame together
-
